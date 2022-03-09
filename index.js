@@ -92,7 +92,7 @@ const questions = [
     type: "choices",
     name: "license",
     message: "What license are you using?",
-    choices: [],
+    choices: ["MIT"],
     when: ({ confirmLicense }) => confirmLicense,
   },
   {
