@@ -7,7 +7,7 @@ const questions = [
   {
     type: "input",
     name: "title",
-    question: "What is the title of the project?",
+    message: "What is the title of the project?",
     validate: (response) => {
       if (response) {
         return true;
@@ -20,7 +20,7 @@ const questions = [
   {
     type: "input",
     name: "description",
-    question: "How would you describe the project?",
+    message: "How would you describe the project?",
     validate: (response) => {
       if (response) {
         return true;
@@ -33,7 +33,7 @@ const questions = [
   {
     type: "input",
     name: "installation",
-    question: "How would someone install this project?",
+    message: "How would someone install this project?",
     validate: (response) => {
       if (response) {
         return true;
@@ -46,7 +46,7 @@ const questions = [
   {
     type: "input",
     name: "usage",
-    question: "How does someone use this project?",
+    message: "How does someone use this project?",
     validate: (response) => {
       if (response) {
         return true;
@@ -59,7 +59,7 @@ const questions = [
   {
     type: "input",
     name: "contributors",
-    question: "Who contributed to this project?",
+    message: "Who contributed to this project?",
     validate: (response) => {
       if (response) {
         return true;
@@ -72,7 +72,7 @@ const questions = [
   {
     type: "input",
     name: "test",
-    question: "How do you test this project?",
+    message: "How do you test this project?",
     validate: (response) => {
       if (response) {
         return true;
@@ -85,19 +85,20 @@ const questions = [
   {
     type: "confirm",
     name: "confirmLicense",
-    question: "Are you using a license?",
-    default: false,
+    message: "Are you using a license?",
+    //default: false,
   },
   {
     type: "choices",
     name: "license",
-    question: "What license are you using?",
+    message: "What license are you using?",
     choices: [],
+    when: ({ confirmLicense }) => confirmLicense,
   },
   {
     type: "input",
     name: "username",
-    question: "What is your GitHub username?",
+    message: "What is your GitHub username?",
     validate: (response) => {
       if (response) {
         return true;
@@ -110,7 +111,7 @@ const questions = [
   {
     type: "input",
     name: "email",
-    question: "What is your email?",
+    message: "What is your email?",
     validate: (response) => {
       if (response) {
         return true;
@@ -126,7 +127,9 @@ const questions = [
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+  return inquirer.prompt(questions);
+}
 
 // Function call to initialize app
 init();
