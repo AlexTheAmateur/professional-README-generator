@@ -25,6 +25,9 @@ To install, you will need to download the files into your desired folder. Once a
 
 Below is a video of the usage of this project:
 
+https://user-images.githubusercontent.com/91556394/157565945-4e6e98d3-ba0e-422a-9359-a23e171afe50.mp4
+
+
 ## Test
 
 You can test this project by following the installation steps and trying it on your own.
