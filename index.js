@@ -89,10 +89,10 @@ const questions = [
     //default: false,
   },
   {
-    type: "choices",
+    type: "list",
     name: "license",
     message: "What license are you using?",
-    choices: ["MIT"],
+    choices: ["MIT", "Apache"],
     when: ({ confirmLicense }) => confirmLicense,
   },
   {
@@ -125,7 +125,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(data) {
-  fs.writeFile("./README.md", generateMarkdown(data), (err) => {
+  fs.writeFile("./test-README.md", generateMarkdown(data), (err) => {
     if (err) throw err;
     console.log(data);
   });
